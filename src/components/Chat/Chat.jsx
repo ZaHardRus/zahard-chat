@@ -4,14 +4,14 @@ import classNames from "classnames";
 
 export const Chat = ({users, messages, userName, roomId, onAddMessage}) => {
     const [messageValue, setMessageValue] = React.useState('');
-    const [visible,setVisible] = React.useState(window.innerWidth >= 768)
+    const [visible, setVisible] = React.useState(window.innerWidth >= 768)
     const messagesRef = React.useRef(null);
-    const swapVisible = (e) =>{
+    const swapVisible = (e) => {
         e.preventDefault()
-        setVisible(prev=>!prev)
+        setVisible(prev => !prev)
     }
     const onSendMessage = () => {
-        if(messageValue==='') return
+        if (messageValue === '') return
         socket.emit('ROOM:NEW_MESSAGE', {
             userName,
             roomId,
@@ -20,25 +20,30 @@ export const Chat = ({users, messages, userName, roomId, onAddMessage}) => {
         onAddMessage({userName, text: messageValue, date: Date.now()});
         setMessageValue('');
     };
-
+    const disconnect = () => {
+        window.location.reload()
+    }
     React.useEffect(() => {
         messagesRef.current.scrollTo(0, messagesRef.current.scrollHeight);
     }, [messages]);
 
     return (
         <div className="chat">
-            <div className={visible?'chat-users chat-users--active':'chat-users'}>
-                <p>Комната: <b>{roomId}</b></p>
-                <hr/>
-                <p>Онлайн:<b> {users.length}</b></p>
-                <ul>
-                    {users.map((name, index) => (
-                        <li className={name === userName ? 'current-user--active' : 'current-user'}
-                            key={name + index}>
-                            {name === userName ? `Вы: ${name}` : name}
-                        </li>
-                    ))}
-                </ul>
+            <div className={visible ? 'chat-users chat-users--active' : 'chat-users'}>
+                <div>
+                    <p>Комната: <b>{roomId}</b></p>
+                    <p>Онлайн:<b> ({users.length})</b></p>
+                    <ul>
+                        {users.map((name, index) => (
+                            <li className={name === userName ? 'current-user--active' : 'current-user'}
+                                key={name + index}>
+                                {name === userName ? `Вы: ${name}` : name}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <button onClick={disconnect} className={'btn btn-danger'}>Выход</button>
             </div>
             <div className="chat-messages">
                 <div ref={messagesRef} className="messages">
@@ -54,12 +59,12 @@ export const Chat = ({users, messages, userName, roomId, onAddMessage}) => {
                     ))}
                 </div>
                 <form>
-          <textarea
-              placeholder={'Напишите сообщение...'}
-              value={messageValue}
-              onChange={(e) => setMessageValue(e.target.value)}
-              className="form-control"
-              rows={3}/>
+                    <textarea
+                        placeholder={'Напишите сообщение...'}
+                        value={messageValue}
+                        onChange={(e) => setMessageValue(e.target.value)}
+                        className="form-control"
+                        rows={3}/>
                     <div className="btns">
                         <button
                             onClick={onSendMessage}

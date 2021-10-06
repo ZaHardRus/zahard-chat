@@ -6,7 +6,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-y: hidden;
-    background-color: #dcd4d4;
+    background-image: url(https://cdn.crello.com/api/media/medium/326239850/stock-photo-beautiful-abstract-background-mixed-water);
+    background-size: cover;
+    background-position: center center;
 }
 
 code {
@@ -56,7 +58,7 @@ code {
 .chat {
     display: flex;
     height: calc(100vh - 40px);
-    border: 3px solid #cdc3c3;
+    border: 3px solid rgba(256,256,256,.1);
     border-radius: 18px;
     overflow: hidden;
 }
@@ -66,7 +68,10 @@ code {
     border-right: 1px solid rgba(159, 183, 197, 0.1);
     padding: 20px;
     width: 200px;
-    background-color: #5c4af5;
+    background-color: rgba(0,0,0,.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .chat-users p{
     display: inline-block;
@@ -82,13 +87,14 @@ code {
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    padding: 20px;
 }
 
 .messages {
     flex: 1;
     overflow-y: auto;
     scroll-behavior: smooth;
+    padding: 15px;
+    background-size: cover;
 }
 
 .messages::-webkit-scrollbar {
@@ -100,7 +106,7 @@ code {
 }
 
 .messages::-webkit-scrollbar-thumb {
-    background-color: #3689e1; /* цвет плашки */
+    background-color: #3b143f; /* цвет плашки */
     border-radius: 20px; /* закругления плашки */
     border: black; /* padding вокруг плашки */
 }
@@ -112,8 +118,7 @@ code {
 .message p {
     display: inline-flex;
     border-radius: 10px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #5c4af5;
+    background-color: rgba(0,0,0,.6);
     padding: 10px 15px 15px;
     color: #fff;
     font-weight: 600;
@@ -131,10 +136,9 @@ code {
 .myMessage p {
     display: inline-flex;
     border-radius: 10px;
-    //border: 1px solid #3689e1;
-    background-color: #fff;
+    background-color: rgba(256, 256, 256,.5);
     padding: 10px 15px 15px;
-    color: #3689e1;
+    color: #000;
     margin: 2px 20px 2px 60px;
     font-weight: 600;
     line-height: 1.5;
@@ -182,7 +186,6 @@ code {
 .chat-messages form {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 2px solid rgb(0, 123, 255);
 }
 
 .chat-messages form textarea {
@@ -193,12 +196,12 @@ code {
 .form-control {
     resize: none;
     font-size: 14px;
-    border:1px solid #3689e1;
-    background-color: #eaedf1;
+    border:1px solid rgba(256, 256, 256,.7);
+    background-color: rgba(256,256,256,.3);
 }
 .form-control::placeholder {
     font-size: 16px;
-    color: rgba(0, 123, 255,.7);
+    color: rgba(256, 256, 256,.7);
 }
 
 form {
@@ -206,6 +209,8 @@ form {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    padding: 20px 20px 0;
+    background-color: rgba(0,0,0,.4);
 }
 .info{
     display: none;
@@ -213,6 +218,7 @@ form {
 .message-info {
     display: flex;
     flex-direction: column;
+    color: #fff;
 }
 .btns{
     align-self: center;
