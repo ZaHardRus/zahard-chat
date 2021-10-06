@@ -23,6 +23,9 @@ app.get('/rooms/:id', (req, res) => {
         : {users: [], messages: []}
     res.json(obj)
 });
+app.get('/admin', (req, res) => {
+    res.json(rooms)
+});
 app.post('/rooms', (req, res) => {
     const {roomId, userName, password} = req.body
     if (!rooms.has(roomId)) {
