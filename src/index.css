@@ -6,6 +6,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-y: hidden;
+    background-color: #dcd4d4;
 }
 
 code {
@@ -65,7 +66,7 @@ code {
     border-right: 1px solid rgba(159, 183, 197, 0.1);
     padding: 20px;
     width: 200px;
-    background-color: #3689e1;
+    background-color: #5c4af5;
 }
 .chat-users p{
     display: inline-block;
@@ -112,11 +113,13 @@ code {
     display: inline-flex;
     border-radius: 10px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #7160ff;
+    background-color: #5c4af5;
     padding: 10px 15px 15px;
     color: #fff;
-
+    font-weight: 600;
+    line-height: 1.5;
     margin: 2px 60px 2px 20px;
+    text-align: justify;
 }
 
 .myMessage {
@@ -128,11 +131,14 @@ code {
 .myMessage p {
     display: inline-flex;
     border-radius: 10px;
-    border: 1px solid #7160ff;
+    //border: 1px solid #3689e1;
     background-color: #fff;
     padding: 10px 15px 15px;
-    color: #7160ff;
+    color: #3689e1;
     margin: 2px 20px 2px 60px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: justify;
 }
 .myMessage span{
     text-align: end;
@@ -187,11 +193,12 @@ code {
 .form-control {
     resize: none;
     font-size: 14px;
-    border:2px solid #3689e1
+    border:1px solid #3689e1;
+    background-color: #eaedf1;
 }
 .form-control::placeholder {
     font-size: 16px;
-    color: rgba(0, 123, 255,.4)
+    color: rgba(0, 123, 255,.7);
 }
 
 form {
@@ -208,7 +215,7 @@ form {
     flex-direction: column;
 }
 .btns{
-    align-self: flex-end;
+    align-self: center;
     margin-bottom: 10px;
 }
 @media (max-width: 768px) {

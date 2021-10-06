@@ -59,7 +59,7 @@ export const Chat = ({users, messages, userName, roomId, onAddMessage}) => {
               value={messageValue}
               onChange={(e) => setMessageValue(e.target.value)}
               className="form-control"
-              rows={5}/>
+              rows={3}/>
                     <div className="btns">
                         <button
                             onClick={onSendMessage}
