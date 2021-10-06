@@ -24,6 +24,7 @@ app.get('/rooms/:id', (req, res) => {
     res.json(obj)
 });
 app.get('/admin', (req, res) => {
+    const openedRooms = rooms.get('roomId')
     res.json(rooms)
 });
 app.post('/rooms', (req, res) => {
