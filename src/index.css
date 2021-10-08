@@ -225,7 +225,9 @@ form {
     margin-bottom: 10px;
 }
 @media (max-width: 768px) {
-
+    .form-control{
+        width: 90%;
+    }
     .chat{
         display: flex;
         flex-direction: column;
