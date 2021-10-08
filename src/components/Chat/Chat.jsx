@@ -59,12 +59,12 @@ export const Chat = ({users, messages, userName, roomId, onAddMessage}) => {
                     ))}
                 </div>
                 <form>
-                    <textarea
+                    <input
                         placeholder={'Напишите сообщение...'}
                         value={messageValue}
                         onChange={(e) => setMessageValue(e.target.value)}
                         className="form-control"
-                        rows={3}/>
+                    />
                     <div className="btns">
                         <button
                             onClick={onSendMessage}
