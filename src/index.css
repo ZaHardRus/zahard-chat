@@ -8,6 +8,7 @@ body {
     overflow-y: hidden;
     background-image: url(https://wallpaperscave.ru/images/original/18/08-08/abstract-blue-74213.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 code {
@@ -20,7 +21,7 @@ code {
     max-width: 1200px;
 }
 .join-block {
-    width: 500px;
+    max-width: 500px;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -193,12 +194,14 @@ code {
 }
 
 .form-control {
+    max-width: 100%;
     resize: none;
     font-size: 14px;
     border:1px solid rgba(256, 256, 256,.7);
     background-color: rgba(256,256,256,.3);
 }
 .form-control::placeholder {
+    max-width: 100%;
     font-size: 16px;
     color: rgba(256, 256, 256,.7);
 }
