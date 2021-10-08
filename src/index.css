@@ -7,7 +7,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-y: hidden;
     background-image: url(https://wallpaperscave.ru/images/original/18/08-08/abstract-blue-74213.jpg);
-    background-size: cover;
+    background-size: auto ;
     background-repeat: no-repeat;
 }
 
@@ -56,7 +56,6 @@ code {
     border-radius: 24px;
 }
 .chat {
-    max-width: 100%;
     display: flex;
     height: calc(100vh - 40px);
     border: 3px solid rgba(256,256,256,.1);
@@ -68,7 +67,7 @@ code {
     border-radius: 16px 0 0 16px;
     border-right: 1px solid rgba(159, 183, 197, 0.1);
     padding: 20px;
-    width: 200px;
+    max-width: 200px;
     background-color: rgba(0,0,0,.4);
     display: flex;
     flex-direction: column;
@@ -195,14 +194,12 @@ code {
 }
 
 .form-control {
-    max-width: 100%;
     resize: none;
     font-size: 14px;
     border:1px solid rgba(256, 256, 256,.7);
     background-color: rgba(256,256,256,.3);
 }
 .form-control::placeholder {
-    max-width: 100%;
     font-size: 16px;
     color: rgba(256, 256, 256,.7);
 }
@@ -212,7 +209,7 @@ form {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 20px;
+    padding: 20px 20px 0;
     background-color: rgba(0,0,0,.4);
 }
 .info{
